@@ -1,0 +1,47 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Description",
+			"kind": "dev",
+			"methods": {},
+			"title": "Events",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/7_Events.sol": "Events"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/7_Events.sol": {
+			"keccak256": "0x15c53e5b63b7862e695e80388237d2fcc00ce3978dcc1a8aa9f71b2b6e24b661",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://36bf22b681cbb2270d9f7d05b5cd1c3cda5b92d981f51baaa7d2cb5a45f3262f",
+				"dweb:/ipfs/QmdmGKFkN9rzdbux7dtHabwmjQ15kTuCkXNzwHhNJf11LG"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,47 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Description",
+			"kind": "dev",
+			"methods": {},
+			"title": "SendingEther",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/10_SendingEther.sol": "SendingEther"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/10_SendingEther.sol": {
+			"keccak256": "0x8273d63241a79a2f7ceffd179f33bd6f6c9740c703bc20d71a75af48481ac97e",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://47ce6282dd3343d344d840a796945749f3ea7f426fa74e13170408c3aa7d51a1",
+				"dweb:/ipfs/QmeXWWcnq177o5XvMB2f8CkQvM9UihHYvjejzXKcBxARfG"
+			]
+		}
+	},
+	"version": 1
+}

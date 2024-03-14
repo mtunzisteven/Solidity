@@ -1,0 +1,47 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Description",
+			"kind": "dev",
+			"methods": {},
+			"title": "ErrorHandling",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/8_ErrorHandling.sol": "ErrorHandling"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/8_ErrorHandling.sol": {
+			"keccak256": "0x69058cbf77ef8bc9588659d1d98510ce55fc576e1fd7a534b11c42d7fde0da8e",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://634af3a73f195c70907f87fe24ed112895eb063c494247a1b97fa703977cbe6b",
+				"dweb:/ipfs/Qmd9ur6SoDCzYTfvHrkVj8beehUUfBKvPqXuaWtBkhvXSs"
+			]
+		}
+	},
+	"version": 1
+}
