@@ -127,11 +127,11 @@
 	},
 	"sources": {
 		"contracts/4_SolDataTypes.sol": {
-			"keccak256": "0x81c1c0d364e110ff28d4122562acdb6602a4ea3f29040db7a2297058161c38cc",
+			"keccak256": "0x577922c38f1fbdf876373ab2f71aa67b2e56cafcf1d13103a5e8072e2eae1696",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://4b10cd55bb0deb99833a60ef6fc9b4980f8aff13ed384b97eb50d42e45b8c120",
-				"dweb:/ipfs/QmVoYEA5Hqpxa9DTz1r5mJWv4aRyAD7yvWDgZbiJRpQt5m"
+				"bzz-raw://abd0faa227be7e91554efed78138454f12721d86e56c54beda61eb7620609b6a",
+				"dweb:/ipfs/Qmao6hM9FpKbuqnjRzXMA99HREvuGykFxAY8ZDWZZephrw"
 			]
 		}
 	},

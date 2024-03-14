@@ -8,6 +8,14 @@ pragma solidity >=0.7.0 <0.9.0;
  */
 contract Types { 
 
+    // modifiers: can change the behavior of a state variable
+    //      constant, immutable, anonymous, indexed
+
+    // constant: same as in JS
+    // immutable: Allows eexactly one assignemnt at construction time and is a constant aftwards. Stored in code.
+    // anonymous: For events — Does not store event signature as topic
+    // indexed: For event params — Store param as topic
+
     bool public boolean = false;
 
     uint public uint_var = 654;
