@@ -1,0 +1,47 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Description",
+			"kind": "dev",
+			"methods": {},
+			"title": "Inheritance",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/11_SendEther.sol": "SendE"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/11_SendEther.sol": {
+			"keccak256": "0xd32d9848065fda1904615541158ffe5244bbcd9cd92d0c0c37d8a0207f907c99",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://573fb382c021f4670ba3e7bec7465e532265c404e1aec39c4d201955f5a1d6a2",
+				"dweb:/ipfs/QmZKyWcP1v8c5uN4owhsNWb6mz2vFH9e4xjCtvw9AK7Xvv"
+			]
+		}
+	},
+	"version": 1
+}

@@ -4,11 +4,153 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "payable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "oldOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnerSet",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "changeOwner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getContractBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_to",
+						"type": "address"
+					}
+				],
+				"name": "sendViaCall",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_to",
+						"type": "address"
+					}
+				],
+				"name": "sendViaSend",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_to",
+						"type": "address"
+					}
+				],
+				"name": "sendViaTransfer",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
 		"devdoc": {
 			"details": "Description",
 			"kind": "dev",
-			"methods": {},
+			"methods": {
+				"changeOwner(address)": {
+					"details": "Change owner",
+					"params": {
+						"newOwner": "address of new owner"
+					}
+				},
+				"getOwner()": {
+					"details": "Return owner address ",
+					"returns": {
+						"_0": "address of owner"
+					}
+				}
+			},
 			"title": "SendingEther",
 			"version": 1
 		},
@@ -35,11 +177,27 @@
 	},
 	"sources": {
 		"contracts/10_SendingEther.sol": {
-			"keccak256": "0x8273d63241a79a2f7ceffd179f33bd6f6c9740c703bc20d71a75af48481ac97e",
+			"keccak256": "0x53d0dfad0f02101b3672f50110eb7430ed37fc103fc86fe9a86e3680bb1f643e",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://47ce6282dd3343d344d840a796945749f3ea7f426fa74e13170408c3aa7d51a1",
-				"dweb:/ipfs/QmeXWWcnq177o5XvMB2f8CkQvM9UihHYvjejzXKcBxARfG"
+				"bzz-raw://03a8ce57754f8a44c0f2c02c9f7f3dc230ef307053c22a25f5e77c980ca2e196",
+				"dweb:/ipfs/QmduB5h3AzRoFu2UwFh5cbBhLxhWG67FQegGkNcHS9KZtZ"
+			]
+		},
+		"contracts/2_Owner.sol": {
+			"keccak256": "0x9217019e8296d018f71417944ea4662450025f5800b3b2e681d33f42b5188aa6",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://3534e691905653734ea00ab4f6346882b88189875a97c19b995f384eefa0f59a",
+				"dweb:/ipfs/QmQhD8V18mt7cRDPwstxBiwJcj84WvzJ7fpvBurBa2Ex9s"
+			]
+		},
+		"hardhat/console.sol": {
+			"keccak256": "0x7434453e6d3b7d0e5d0eb7846ffdbc27f0ccf3b163591263739b628074dc103a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://49355f780520494d1d5a0f01858385e51bb5280ce0ecfb960f16995065dca395",
+				"dweb:/ipfs/QmSwJ6C5QLz6xKeQZS8wbwjU1KxRFTYfwbGmtzisd5sRW4"
 			]
 		}
 	},

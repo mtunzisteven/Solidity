@@ -4,7 +4,40 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "AnotherLog",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					}
+				],
+				"name": "Log",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "test",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
 		"devdoc": {
 			"details": "Description",
 			"kind": "dev",
@@ -35,11 +68,11 @@
 	},
 	"sources": {
 		"contracts/7_Events.sol": {
-			"keccak256": "0x15c53e5b63b7862e695e80388237d2fcc00ce3978dcc1a8aa9f71b2b6e24b661",
+			"keccak256": "0x266b393a352037a6603823f04e904a6a22ee93127e4cb48ebf9c8bb629708ffc",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://36bf22b681cbb2270d9f7d05b5cd1c3cda5b92d981f51baaa7d2cb5a45f3262f",
-				"dweb:/ipfs/QmdmGKFkN9rzdbux7dtHabwmjQ15kTuCkXNzwHhNJf11LG"
+				"bzz-raw://e3d6e57241fbb5c34cf76f846140ca4573a23f0be946ed1d7ef986c395824f30",
+				"dweb:/ipfs/QmUhQ5aJLrLKTji2kTPDnPhTmrCZ3Qc7HXzDgsaYnGQd4E"
 			]
 		}
 	},

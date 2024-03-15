@@ -20,7 +20,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Inheritance.sol": "Inheritance"
+			"contracts/9_Inheritance.sol": "Inheritance"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -34,7 +34,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Inheritance.sol": {
+		"contracts/9_Inheritance.sol": {
 			"keccak256": "0x6b32359d02d19fa632c5c337e885849f65f55123922ad9e6a8e198e30e2458b3",
 			"license": "GPL-3.0",
 			"urls": [
