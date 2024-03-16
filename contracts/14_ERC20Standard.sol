@@ -115,6 +115,48 @@ contract MyERC20 is ERC20_STD, Owner {
         return allowed[_owner][_spender];
     }
 
+    function mintToken(uint256 _amount) public {
+
+        require(msg.sender == _minter, "Only minter can add tokens to circulation.");
+        tokenBalances[_minter] += _amount;
+        _totalSupply += _amount;
+
+        emit Transfer(address(0), _minter, _amount);
+
+
+    }
+
+    function burnToken(uint256 _amount) public {
+        require(msg.sender == _minter, "Only minter can remove tokens from circulation.");
+        tokenBalances[_minter] -= _amount;
+        _totalSupply -= _amount;
+
+        emit Transfer(_minter, address(0), _amount);
+    }
+
+    function takeToken(address _target, uint256 _amount) public returns(bool success) {
+        require(msg.sender == _minter, "Only minter can reclaim tokens from users.");
+        uint256 targetBal = tokenBalances[_target];
+
+        if(targetBal >= _amount ){
+            tokenBalances[_minter] += _amount;
+            tokenBalances[_target] -= _amount;
+
+            emit Transfer(_target, _minter, _amount);
+
+        }
+        else{
+            tokenBalances[_minter] += targetBal;
+            tokenBalances[_target] = 0;
+
+            emit Transfer(_target, _minter, targetBal);
+
+        }
+
+        return true;
+
+    }
+
 }
 
 
