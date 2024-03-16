@@ -428,11 +428,11 @@
 	},
 	"sources": {
 		"contracts/14_ERC20Standard.sol": {
-			"keccak256": "0x4336839144679568a45921ad542e86d1f27f47c5ac6ea4b20c244895dcffa457",
+			"keccak256": "0xd3ab786eb393f3ba17b3cb8d3c059c0a038ec576d962d86143c26452b81b0731",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://742b77637546af91f17d73ebfb792652b4ed156a11ce407dff8ae3d4c09acd26",
-				"dweb:/ipfs/QmT8d1N6TNHyWE2K5DYs2HCNYMp4c3mS7KEdHLYpmYD69o"
+				"bzz-raw://dda6300369e07af9dc1845d2b91de17d8677d61d789ac876d0bcfa8dca3adcff",
+				"dweb:/ipfs/QmWuZFd65mwdW22cLTKx4dfQw1CzGJ71RkUuvTmShmqyU2"
 			]
 		},
 		"contracts/2_Owner.sol": {

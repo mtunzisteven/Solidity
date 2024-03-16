@@ -34,11 +34,18 @@ contract MyERC20 is ERC20_STD, Owner {
     string public _name;
     string public _symbol;
     uint8 public _decimals;
-    uint256 public _totalSupply;
+    uint256 public _totalSupply; // Total token supply in circulation
 
-    address public _minter;
+    address public _minter; // the address of the minter of the token
+
+    // How much token balances each owner has.
+    // 'owner' address to 'value' of tokens
     mapping (address => uint256) tokenBalances;
-    mapping (address => mapping (address => uint256)) allowed;
+
+    // delegation of tokens manages through this state variable
+    // 'owner' address to 'spender' address, and 'spender' address to 'value'
+    // 'value' is how much is allowed to be spent on behalf of token 'owner'
+    mapping (address => mapping (address => uint256)) allowed; 
 
     constructor(address minter_) {
         _name = "Shade Coin";
@@ -46,6 +53,7 @@ contract MyERC20 is ERC20_STD, Owner {
         _totalSupply = 1000000000;
         _minter = minter_;
 
+        // Minter has all the tokens at contract initialization
         tokenBalances[_minter] = _totalSupply;
 
     }
@@ -77,6 +85,7 @@ contract MyERC20 is ERC20_STD, Owner {
         return true;
     }
 
+    // Keeping track of how much token is allowed to be transfered
     function transferFrom(address _from, address _to, uint256 _value) public override returns (bool success){
         
         uint256 allowedBal = allowed[_from][msg.sender];
@@ -84,6 +93,8 @@ contract MyERC20 is ERC20_STD, Owner {
 
         tokenBalances[_from] -= _value;
         tokenBalances[_to] += _value;
+
+        allowed[_from][msg.sender] -= _value; // reset the allowed token amount to be sent to be less by what was just sent
 
         emit Approval(_from, _to, _value);
 
@@ -93,7 +104,7 @@ contract MyERC20 is ERC20_STD, Owner {
 
     function approve(address _spender, uint256 _value) public override returns (bool success){
         require( tokenBalances[msg.sender] >= _value, "Insufficient token");
-        allowed[msg.sender][_spender] = _value;
+        allowed[msg.sender][_spender] = _value; // set the allowed token amount to be sent
 
         emit Approval(msg.sender, _spender, _value);
 
