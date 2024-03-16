@@ -45,6 +45,25 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "howMany",
+						"type": "uint256"
+					}
+				],
+				"name": "buyToken",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address payable",
 						"name": "_to",
 						"type": "address"
@@ -115,7 +134,7 @@
 					}
 				}
 			},
-			"title": "ERC20_STD",
+			"title": "VendorSHAC",
 			"version": 1
 		},
 		"userdoc": {
@@ -149,11 +168,11 @@
 			]
 		},
 		"contracts/15_Vendor.sol": {
-			"keccak256": "0x14546769e2165245a2eceee236f5c37df16c3539df956c5c25417fb8da6244fd",
+			"keccak256": "0xd7fe77b9108573e39f4f3920501430228e3a5db9e0a39797f05d9134b60555d8",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://4d32e2e6565b1613bc0c6a765dcb97c3a62e19e2e693a518bbb58c747044245f",
-				"dweb:/ipfs/QmSrv81qrRaNRWNZvYkCf7PEiruKCV5P6Z5dB7QRGPoDYE"
+				"bzz-raw://7cafbf31241e8a523f437083bde71b253edab49622015db1649d4abc81749f6f",
+				"dweb:/ipfs/QmP1qYHi8VfHr78vmoqYRtpGmBgnCTdPEbzRVWXxVrwNWH"
 			]
 		},
 		"contracts/2_Owner.sol": {

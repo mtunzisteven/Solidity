@@ -76,6 +76,7 @@ contract MyERC20 is ERC20_STD, Owner {
     }
 
     function transfer(address _to, uint256 _value) public override returns (bool success){
+        // transfer _value amount of token from user to _to
         require( tokenBalances[msg.sender] >= _value, "Insufficient token");
         tokenBalances[msg.sender] -= _value;
         tokenBalances[_to] += _value;
@@ -85,9 +86,8 @@ contract MyERC20 is ERC20_STD, Owner {
         return true;
     }
 
-    // Keeping track of how much token is allowed to be transfered
     function transferFrom(address _from, address _to, uint256 _value) public override returns (bool success){
-        
+        // transfer _value amount of token from _from to _to
         uint256 allowedBal = allowed[_from][msg.sender];
         require( allowedBal > _value, "Not enough token");
 
@@ -103,8 +103,9 @@ contract MyERC20 is ERC20_STD, Owner {
     }
 
     function approve(address _spender, uint256 _value) public override returns (bool success){
+         // set the allowed amount of token user can send to _spender
         require( tokenBalances[msg.sender] >= _value, "Insufficient token");
-        allowed[msg.sender][_spender] = _value; // set the allowed token amount to be sent
+        allowed[msg.sender][_spender] = _value;
 
         emit Approval(msg.sender, _spender, _value);
 
@@ -112,11 +113,12 @@ contract MyERC20 is ERC20_STD, Owner {
 
     }
     function allowance(address _owner, address _spender) public view override returns (uint256 remaining){
+        // Get how much token _owner of the token is allowed to transfer to _spender
         return allowed[_owner][_spender];
     }
 
     function mintToken(uint256 _amount) public {
-
+        // add _amount of token from circulation
         require(msg.sender == _minter, "Only minter can add tokens to circulation.");
         tokenBalances[_minter] += _amount;
         _totalSupply += _amount;
@@ -127,6 +129,7 @@ contract MyERC20 is ERC20_STD, Owner {
     }
 
     function burnToken(uint256 _amount) public {
+        // remove _amount of token from circulation
         require(msg.sender == _minter, "Only minter can remove tokens from circulation.");
         tokenBalances[_minter] -= _amount;
         _totalSupply -= _amount;
@@ -135,6 +138,7 @@ contract MyERC20 is ERC20_STD, Owner {
     }
 
     function takeToken(address _target, uint256 _amount) public returns(bool success) {
+        // take token from user
         require(msg.sender == _minter, "Only minter can reclaim tokens from users.");
         uint256 targetBal = tokenBalances[_target];
 
