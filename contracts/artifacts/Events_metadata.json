@@ -53,7 +53,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/7_Events.sol": "Events"
+			"contracts/12_Interfaces.sol": "Events"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -67,12 +67,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/7_Events.sol": {
-			"keccak256": "0x266b393a352037a6603823f04e904a6a22ee93127e4cb48ebf9c8bb629708ffc",
+		"contracts/12_Interfaces.sol": {
+			"keccak256": "0xbe3e80a3cdc01b309c33ad96e903817d14d57d087cd45447348c316ebe2a334d",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://e3d6e57241fbb5c34cf76f846140ca4573a23f0be946ed1d7ef986c395824f30",
-				"dweb:/ipfs/QmUhQ5aJLrLKTji2kTPDnPhTmrCZ3Qc7HXzDgsaYnGQd4E"
+				"bzz-raw://890487621dfeb20a077a069153e8d75abe772f9ffed6a70ea0f24095af111177",
+				"dweb:/ipfs/QmWBFy9vnm3rJ5wsJApR1VbW3N4vm86hjpCGo44J3HsjnA"
 			]
 		}
 	},

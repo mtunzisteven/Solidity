@@ -1,0 +1,118 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_a",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_b",
+						"type": "uint256"
+					}
+				],
+				"name": "add",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getString",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "setValue",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_a",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_b",
+						"type": "uint256"
+					}
+				],
+				"name": "setValue",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Description",
+			"kind": "dev",
+			"methods": {},
+			"title": "MyContract",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/13_Interafces2.sol": "MyContract"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/12_Interfaces.sol": {
+			"keccak256": "0x9835c4566281d4581f04a3a2a9ed214fecf03f42031eb634819007d9068f755d",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://bd931076e6da6ec8630200a1d5e0077f63a35df1ccc9852a260bb67b0d790936",
+				"dweb:/ipfs/QmR3kgNZfrX1Ffa4UzsvQTabrecqoXpUo7CpncbXsAoybi"
+			]
+		},
+		"contracts/13_Interafces2.sol": {
+			"keccak256": "0x12b2242c92bf11ac03f15bc013a5527f62d508ace453794bf23b436f56f751d4",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://500a541fb2f4d7f24ab07a2df665c9f88a82841b88c7a7762810ee0d926022e0",
+				"dweb:/ipfs/QmbT3C7QxPiV8ivLya2YNn2A2thiHUGm9rztTFyhjF2j3e"
+			]
+		}
+	},
+	"version": 1
+}

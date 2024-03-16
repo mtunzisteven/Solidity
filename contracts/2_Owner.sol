@@ -11,6 +11,7 @@ import "hardhat/console.sol";
 contract Owner {
 
     address public owner;
+    address public newOwner;
 
     // event for EVM logging
     event OwnerSet(address indexed oldOwner, address indexed newOwner);
@@ -22,7 +23,7 @@ contract Owner {
         // This used to consume all gas in old EVM versions, but not anymore.
         // It is often a good idea to use 'require' to check if functions are called correctly.
         // As a second argument, you can also provide an explanation about what went wrong.
-        require(msg.sender == owner, "Caller is not owner");
+        require(msg.sender == owner, "Only owner can change ownership");
         _;
     }
 
@@ -37,11 +38,19 @@ contract Owner {
 
     /**
      * @dev Change owner
-     * @param newOwner address of new owner
+     * @param _to address of new owner
      */
-    function changeOwner(address newOwner) public isOwner {
+    function changeOwner(address payable _to) public isOwner {
+        newOwner = _to;
+    }
+
+    /**
+     * @dev Accept owner
+     */
+    function acceptOwner() public isOwner {
         emit OwnerSet(owner, newOwner);
         owner = newOwner;
+        newOwner = address(0);
     }
 
     /**

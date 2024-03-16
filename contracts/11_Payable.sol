@@ -34,7 +34,7 @@ contract Payable is Owner {
 
 
     function withdraw() public isOwner{
-        // owner is payable, so function does not fail since it is not payable
+        // owner is payable, so function does not fail since it is not payable, but must set it as such
 
         // get amount of Ether stored in this contract
         uint amount = address(this).balance;
