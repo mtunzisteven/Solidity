@@ -22,6 +22,31 @@
 					{
 						"indexed": true,
 						"internalType": "address",
+						"name": "_buyer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_valueSent",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_tokenQuantity",
+						"type": "uint256"
+					}
+				],
+				"name": "BuyToken",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
 						"name": "oldOwner",
 						"type": "address"
 					},
@@ -36,6 +61,50 @@
 				"type": "event"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_seller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_howMany",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "SellToken",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_withdrawer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_contractBal",
+						"type": "uint256"
+					}
+				],
+				"name": "WithdrawBalance",
+				"type": "event"
+			},
+			{
 				"inputs": [],
 				"name": "acceptOwner",
 				"outputs": [],
@@ -43,13 +112,7 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "howMany",
-						"type": "uint256"
-					}
-				],
+				"inputs": [],
 				"name": "buyToken",
 				"outputs": [
 					{
@@ -112,6 +175,38 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "howMany",
+						"type": "uint256"
+					}
+				],
+				"name": "sellToken",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -160,19 +255,19 @@
 	},
 	"sources": {
 		"contracts/14_ERC20Standard.sol": {
-			"keccak256": "0x84b498ad9074ba5d83af7093681da517ddf1ef6b2c072444e30dcd4e83e3f35a",
+			"keccak256": "0x89a33c39380cac9d19a60d840634eb69c1b4c9646ad18dbe92d8d9f225a8acc6",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://409532ee8aeb5b220f3ede3090b1fe3cc1b2b76f1c2bc2427621cb5a7c1e85ee",
-				"dweb:/ipfs/QmQVKzU7uDDi9nrrH99sjeY4YkjuaB4SqVZDRs4x85D8Uo"
+				"bzz-raw://3cd6eaf90687e61bd5af4f5ca472200ac810a778b8ffafb334f6b0d750ea5274",
+				"dweb:/ipfs/QmbvnW5sfuKFjW9Kw1QoFbxLg8cMUWhc6WgfwCoxSsnwb8"
 			]
 		},
 		"contracts/15_Vendor.sol": {
-			"keccak256": "0xd7fe77b9108573e39f4f3920501430228e3a5db9e0a39797f05d9134b60555d8",
+			"keccak256": "0x4daf5c3eba40f00ee06978db40cbdfce11a6c155add5dbed7efae425f48d207d",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://7cafbf31241e8a523f437083bde71b253edab49622015db1649d4abc81749f6f",
-				"dweb:/ipfs/QmP1qYHi8VfHr78vmoqYRtpGmBgnCTdPEbzRVWXxVrwNWH"
+				"bzz-raw://3b5f46c2fb4e9afe38eba82835b54ffd654610a38b6b7546770369c1e3fad640",
+				"dweb:/ipfs/QmUCUbd21pHJvKiFuub4jLwkwAi28QZcQuTmBV6yQDxqK4"
 			]
 		},
 		"contracts/2_Owner.sol": {

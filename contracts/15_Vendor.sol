@@ -10,7 +10,11 @@ import "./14_ERC20Standard.sol";
  * @dev Description
  */
 contract VendorSHAC is Owner{
-
+    // For deploying this contract, deploy the ff in sequence: 
+    //    - Ownder.sol make chosen owner deploying account
+    //    - MyERC20 with minter again as input
+    //    - Use above contract address as myECR20 address when deploying
+    
     MyERC20 _myERC20;
     address private VOwner;
     uint TokensPerEther = 100;
@@ -21,18 +25,20 @@ contract VendorSHAC is Owner{
 
     constructor(address myERC20_) {
 
-        VOwner = msg.sender;
-        _myERC20 = MyERC20(myERC20_);
+        VOwner = msg.sender; // this must be the user running the contract - the owner
+        _myERC20 = MyERC20(myERC20_); // This is the address of the erc20 contract
     }
 
     function buyToken() payable public returns(bool) {
+        // buying from contract to user. msg.value is the value entered in the
+        // value input of Deploy & Run transactions, not any input in functions
          require( msg.value >= 1, " min purchase is 1 ether." );
 
-         uint tokenQty = msg.value * TokensPerEther;
+         uint tokenQty = ( msg.value / 1 ether ) * TokensPerEther;
 
          uint vendorTokenBal = _myERC20.balanceOf(address(this));
 
-        require( vendorTokenBal >= tokenQty, " min purchase is 1 ether." );
+        require( vendorTokenBal >= tokenQty, " Not enough vendor token." );
 
         (bool sent) = _myERC20.transfer(msg.sender, tokenQty);
         require( sent, "Token transfer failed." );
@@ -44,7 +50,7 @@ contract VendorSHAC is Owner{
     }
 
     function sellToken(uint howMany) payable public returns(bool) {
-         
+        // selling from Vendor to contract
 
         uint token = howMany % TokensPerEther;
 
@@ -62,6 +68,9 @@ contract VendorSHAC is Owner{
         (bool success) = _myERC20.transferFrom(msg.sender, address(this), howMany);
         require( success, "Token transfer failed." );
 
+        (bool sent, ) = msg.sender.call{ value: etherQty * 1e18 }(''); // Pay user in wei
+        require(sent, "Failed to withdraw.");
+
         emit SellToken(msg.sender, howMany, etherQty);
 
         return true;
@@ -69,9 +78,11 @@ contract VendorSHAC is Owner{
     }
 
     function withdraw() public  payable returns(bool){
+        // Withdrawing from contract to vendor. Vendor must be selected for withdrawal up top
         require(msg.sender == VOwner, "Only vendor can withdraw.");
 
         uint contractBal = address(this).balance;
+        require(contractBal > 0, "Nothing to withdraw.");
 
         (bool sent, ) = msg.sender.call{ value: contractBal }('');
         require(sent, "Failed to withdraw.");
