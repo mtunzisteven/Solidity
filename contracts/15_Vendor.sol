@@ -13,8 +13,8 @@ contract VendorSHAC is Owner{
     // For deploying this contract, deploy the ff in sequence: 
     //    - Ownder.sol make chosen owner deploying account
     //    - MyERC20 with minter again as input
-    //    - Use above contract address as myECR20 address when deploying
-    
+    //    - Use above contract address as myECR20 address when deploying by vendor
+
     MyERC20 _myERC20;
     address private VOwner;
     uint TokensPerEther = 100;
@@ -50,7 +50,7 @@ contract VendorSHAC is Owner{
     }
 
     function sellToken(uint howMany) payable public returns(bool) {
-        // selling from Vendor to contract
+        // selling from User to contract. Must ensure allowed amount configured in erc20 first
 
         uint token = howMany % TokensPerEther;
 
