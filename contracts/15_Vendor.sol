@@ -11,7 +11,7 @@ import "./14_ERC20Standard.sol";
  */
 contract VendorSHAC is Owner{
     // For deploying this contract, deploy the ff in sequence: 
-    //    - Ownder.sol make chosen owner deploying account
+    //    - Ownder.sol make chosen owner deploy account
     //    - MyERC20 with minter again as input
     //    - Use above contract address as myECR20 address when deploying by vendor
 
