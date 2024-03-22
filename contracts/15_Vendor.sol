@@ -13,7 +13,7 @@ contract VendorSHAC is Owner{
     // For deploying this contract, deploy the ff in sequence: 
     //    - Ownder.sol make chosen owner deploy account
     //    - MyERC20 with minter again as input
-    //    - Use above contract address as myECR20 address when deploying by vendor
+    //    - Use above contract address as myECR20 address when deploying this contract by vendor
 
     MyERC20 _myERC20;
     address private VOwner;
@@ -50,7 +50,7 @@ contract VendorSHAC is Owner{
     }
 
     function sellToken(uint howMany) payable public returns(bool) {
-        // selling from User to contract. Must ensure allowed amount configured in erc20 first
+        // selling from User to this contract. Must ensure allowance amount configured in erc20 first
 
         uint token = howMany % TokensPerEther;
 
@@ -58,12 +58,12 @@ contract VendorSHAC is Owner{
 
         uint limit = _myERC20.allowance(msg.sender, address(this)); // Get how much user is allowed to transfer to vendor(this contract)
 
-        require(limit >= howMany, "Exceeded allowed quantity." ); // Check that the allow amount to transfer to this contract
+        require(limit < howMany, "Exceeded allowed quantity." ); // Check that the allow amount to transfer to this contract
 
         uint etherQty = howMany / TokensPerEther; // convert from tokens into ether
         uint vendorBal = ( address(this).balance / 1 ether); // convert balance into ether
 
-        require(vendorBal >= etherQty, "Insufficient vendor balance." ); // Check that the allow amount to transfer to this contract
+        require(vendorBal <= etherQty, "Insufficient vendor balance." ); // Check that the allow amount to transfer to this contract
 
         (bool success) = _myERC20.transferFrom(msg.sender, address(this), howMany);
         require( success, "Token transfer failed." );
@@ -75,6 +75,10 @@ contract VendorSHAC is Owner{
 
         return true;
 
+    }
+
+    function transferLimit() public view returns(uint){
+        return _myERC20.allowance(msg.sender, address(this));
     }
 
     function withdraw() public  payable returns(bool){

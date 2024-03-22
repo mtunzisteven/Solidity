@@ -61,6 +61,11 @@ contract MyERC20 is ERC20_STD, Owner {
     function name() public view override returns (string memory){
         return _name;
     }
+
+    function minter() public view returns (address){
+        return _minter;
+    }
+
     function symbol() public view override returns (string memory){
         return _symbol;
     }
