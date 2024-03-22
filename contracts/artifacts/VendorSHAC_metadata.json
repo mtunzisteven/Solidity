@@ -276,11 +276,11 @@
 			]
 		},
 		"contracts/15_Vendor.sol": {
-			"keccak256": "0x34a5006ce0199895005a142db439c60d3782d29c2cae472fda082c9505dc714b",
+			"keccak256": "0x70ec0927544b3e007c2c283a6866ec69711ed8245aad9a5e0dd8a7e90b29efcc",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://f03c94e0c7269e17cb24e85937b3a7ce9789b38225d230806683b24a337d7793",
-				"dweb:/ipfs/QmZZLUHk2e3sDqRR6t2SdcZJzGKnt6nnMMvkLTZpwdkGLo"
+				"bzz-raw://9b6581a68bb15263b76d7f975a507cab39ed5678055913c87c5d3d74312e9a30",
+				"dweb:/ipfs/QmUBAvo57p4zExTxp88eSaYzcE7WaaFxFMtFCHA5SgUKuK"
 			]
 		},
 		"contracts/2_Owner.sol": {

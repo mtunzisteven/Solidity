@@ -58,7 +58,7 @@ contract VendorSHAC is Owner{
 
         uint limit = _myERC20.allowance(msg.sender, address(this)); // Get how much user is allowed to transfer to vendor(this contract)
 
-        require(limit > howMany, "Exceeded allowed quantity." ); // Check that the allow amount to transfer to this contract
+        require(limit >= howMany, "Exceeded allowed quantity." ); // Check that the allow amount to transfer to this contract
 
         uint etherQty = howMany / TokensPerEther; // convert from tokens into ether
         uint vendorBal = ( address(this).balance / 1 ether); // convert balance into ether
